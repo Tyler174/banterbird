@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <input id="usernameInput" placeholder="Enter Username"/>
-    <button onclick="login()">Login</button>
+<head>
+    <title>Login - Banterbird</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Welcome to Banterbird</h2>
+        <input id="usernameInput" placeholder="Enter Username"/>
+        <br><br>
+        <button onclick="login()">Login</button>
+    </div>
+
     <script>
         function login() {
             const username = document.getElementById('usernameInput').value.trim();
@@ -10,8 +20,9 @@
                 window.location.href = '/';
             }
             else {
-                alert("Please enter username")
+                alert("Please enter username");
             }
-                }
+        }
     </script>
+</body>
 </html>

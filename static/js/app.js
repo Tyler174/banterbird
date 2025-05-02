@@ -41,3 +41,15 @@ window.onload = async () => {
         console.error("error fetching post: ", error);
     }
 };
+
+setInterval(async () => {
+  try {
+    const response = await fetch("/api/posts");
+    const posts = await response.json();
+    document.getElementById("feed").innerHTML = "";
+    posts.forEach((post) => renderPost(post));
+    }   catch (error)   {
+    console.error("error fetching post: ", error);
+}
+
+}, 5000); // 5 seconds
